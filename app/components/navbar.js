@@ -1,96 +1,48 @@
-import { AppBar, Toolbar, Button, Typography, IconButton } from "@mui/material";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import HomeIcon from '@mui/icons-material/Home';
-import AddIcon from '@mui/icons-material/Add';
-import FolderIcon from '@mui/icons-material/Folder';
+import { Home, FolderOpen, PlusCircle, LogIn, UserPlus } from 'lucide-react';
 
 export default function Navbar() {
     return (
-        <AppBar position="fixed">
-            <Toolbar
-                sx={{
-                    px: { xs: 1, sm: 2, md: 3 }, // Padding adjusts based on screen size
-                    minHeight: { xs: 56, sm: 64, md: 72 }, // Navbar height changes responsively
-                }}
-            >
-                <IconButton
-                    aria-label="home"
-                    color="inherit"
-                    href="/"
-                    sx={{
-                        fontSize: { xs: 20, sm: 24, md: 28 }, // Icon size changes responsively
-                    }}
-                >
-                    <HomeIcon fontSize="inherit" />
-                </IconButton>
-                <Typography 
-                    variant="h6" 
-                    sx={{ 
-                        flexGrow: 1, 
-                        display: 'flex', 
-                        justifyContent: 'center',
-                        marginLeft: { xs: 0, md: '300px' }, // Adjust margin based on screen size
-                        fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' }, // Font size changes responsively
-                    }}
-                >
-                    CardCrafter
-                </Typography>
-                <SignedOut>
-                    <Button
-                        color="inherit"
-                        href="/sign-in"
-                        sx={{
-                            fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, // Button font size changes
-                            px: { xs: 1, sm: 2, md: 3 }, // Button padding changes
-                        }}
-                    >
-                        Login
-                    </Button>
-                    <Button
-                        color="inherit"
-                        href="/sign-up"
-                        sx={{
-                            fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' },
-                            px: { xs: 1, sm: 2, md: 3 },
-                        }}
-                    >
-                        Sign Up
-                    </Button>
-                </SignedOut>
-                <SignedIn>
-                    <Button
-                        variant="outlined"
-                        color="inherit"
-                        href="/flashcards"
-                        startIcon={<FolderIcon />}
-                        sx={{
-                            fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' },
-                            px: { xs: 1, sm: 2, md: 3 },
-                            mr: { xs: '2px', sm: '3px', md: '5px' }, // Margin changes responsively
-                        }}
-                    >
-                        Collection
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        color="inherit"
-                        href="/generate"
-                        startIcon={<AddIcon />}
-                        sx={{
-                            fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' },
-                            px: { xs: 1, sm: 2, md: 3 },
-                            mr: { xs: '2px', sm: '3px', md: '5px' },
-                        }}
-                    >
-                        Generate
-                    </Button>
-                    <UserButton 
-                        sx={{
-                            fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' },
-                        }}
-                    />
-                </SignedIn>
-            </Toolbar>
-        </AppBar>
+        <nav className="z-50 bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16 sm:h-20">
+                    <div className="flex items-center">
+                        <a href="/" className="flex items-center space-x-2 text-white hover:text-blue-100 transition duration-150 ease-in-out">
+                            <Home className="h-6 w-6 sm:h-7 sm:w-7" />
+                            <span className="font-bold text-xl sm:text-2xl tracking-tight">CardCrafter</span>
+                        </a>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                        <SignedOut>
+                            <a href="/sign-in" className="text-white hover:text-blue-100 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center space-x-1">
+                                <LogIn className="h-5 w-5" />
+                                <span>Login</span>
+                            </a>
+                            <a href="/sign-up" className="bg-white text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center space-x-1">
+                                <UserPlus className="h-5 w-5" />
+                                <span>Sign Up</span>
+                            </a>
+                        </SignedOut>
+                        <SignedIn>
+                            <a href="/flashcards" className="text-white hover:text-blue-100 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center space-x-1">
+                                <FolderOpen className="h-5 w-5" />
+                                <span className="hidden sm:inline">Collection</span>
+                            </a>
+                            <a href="/generate" className="text-white hover:text-blue-100 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out flex items-center space-x-1">
+                                <PlusCircle className="h-5 w-5" />
+                                <span className="hidden sm:inline">Generate</span>
+                            </a>
+                            <UserButton 
+                                appearance={{
+                                    elements: {
+                                        avatarBox: "w-10 h-10 rounded-full ring-2 ring-white hover:ring-blue-200 transition-all duration-200"
+                                    }
+                                }}
+                            />
+                        </SignedIn>
+                    </div>
+                </div>
+            </div>
+        </nav>
     );
 }

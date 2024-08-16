@@ -21,6 +21,7 @@
     text-wrap: balance;
   }
 }
+
 @layer utilities {
   .perspective {
     perspective: 1000px;

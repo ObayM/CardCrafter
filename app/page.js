@@ -40,7 +40,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-indigo-200">
+    <div className="bg-gradient-to-b from-blue-100 to-indigo-200">
       <Head>
         <title>CardCrafter</title>
         <meta name="description" content="Craft Flashcards With Ease"></meta>

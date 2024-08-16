@@ -17,6 +17,7 @@
     "@mui/material": "^5.16.7",
     "@stripe/stripe-js": "^4.3.0",
     "autoprefixer": "^10.4.20",
+    "canvas-confetti": "^1.9.3",
     "firebase": "^10.12.5",
     "framer-motion": "^11.3.28",
     "lucide-react": "^0.428.0",

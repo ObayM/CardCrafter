@@ -1,11 +1,9 @@
 import { SignIn, SignUp } from "@clerk/nextjs";
 import { AppBar, Box, Button, Container, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
-import Navbar from "@/app/components/navbar";
 export default function SignUpPage () {
     return (
         <Container maxWidth="100vw">
-            <Navbar/>
             <Box
             display="flex"
             flexDirection="column"

@@ -144,7 +144,7 @@ export default function Flashcard() {
                                 <div className="bg-blue-600 h-2.5 rounded-full" style={{width: `${((currentCardIndex + 1) / flashcards.length) * 100}%`}}></div>
                             </div>
                             <p className="text-blue-600 font-semibold">
-                                You've studied {currentCardIndex + 1} out of {flashcards.length} cards
+                                You&apos;ve studied {currentCardIndex + 1} out of {flashcards.length} cards
                             </p>
                         </div>
                     </>

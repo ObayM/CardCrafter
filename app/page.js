@@ -164,7 +164,7 @@ export default function Home() {
         <section className="mt-32 bg-blue-100 py-20 rounded-3xl">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-blue-800 mb-8">Ready to supercharge your learning?</h2>
-            <p className="text-xl text-blue-600 mb-12">Join thousands of students who are already benefiting from CardCrafter's AI-powered flashcards.</p>
+            <p className="text-xl text-blue-600 mb-12">Join thousands of students who are already benefiting from CardCrafter&apos;s AI-powered flashcards.</p>
             <motion.a 
               href="/sign-up" 
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out inline-block"

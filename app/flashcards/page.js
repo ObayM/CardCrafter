@@ -155,7 +155,7 @@ export default function Flashcards() {
                                 <AlertCircle size={24} className="mr-2" />
                                 <h3 className="text-xl font-semibold">Delete Confirmation</h3>
                             </div>
-                            <p className="mb-4">Are you sure you want to delete the "{deleteConfirmation}" deck? This action cannot be undone.</p>
+                            <p className="mb-4">Are you sure you want to delete the &quot;{deleteConfirmation}&quot; deck? This action cannot be undone.</p>
                             <div className="flex justify-end space-x-2">
                                 <button
                                     onClick={() => setDeleteConfirmation(null)}

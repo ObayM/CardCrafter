@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { collection, doc, getDoc, getDocs, deleteDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useSearchParams } from "next/navigation";
-import { motion } from "framer-motion";
 import { Trash2, ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
 
 export default function Flashcard() {
